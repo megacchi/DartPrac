@@ -1,40 +1,20 @@
 class Animal {
   int weight;
   int length;
-  
-  Animal();
-  Animal.statas(this.weight, this.length){
-    weight = 0;
-    length = 0;
+  String name;
+
+  Animal() : this.statas('noname', 0, 0);
+  Animal.statas(String name,int weight, int length ){
+    this.name = name;
+    this.weight = weight;
+    this.length = length;
   }
 
-  void bark() {
-    print("なく");
-  }
-}
-
-class Dog extends Animal {
-  Dog() : super.statas(13, 70);
-
-  @override
-  String bark() {
-   return "ワンとなく";
-  }
-
-  String run() {
-   return "すたこらさっさと走る";
-  }
-}
-
-class Cat extends Animal {
-  Cat() : super.statas(10, 50);
-
-  @override
-  String bark() {
-   return "にゃーとなく";
-  }
-
-  String run() {
-   return "スタスタ走る";
+  void barkData(){
+    String barkPl =
+    'このAnimalは' + this.name +
+    ' 身長は ' + this.weight.toString() + 
+    '体重は'+ this.length.toString();
+    print(barkPl);
   }
 }
