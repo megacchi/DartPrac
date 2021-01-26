@@ -1,20 +1,21 @@
 class Animal {
-  int weight;
-  int length;
+  final int weight;
+  final int length;
+  final String name;
   
-  Animal();
-  Animal.statas(this.weight, this.length){
-    weight = 0;
-    length = 0;
+  Animal({this.weight, this.length, this.name});
+  String bark() {
+    return 'bark';
   }
 
-  void bark() {
-    print("なく");
+  String run() {
+    return 'run';
   }
 }
 
 class Dog extends Animal {
-  Dog() : super.statas(13, 70);
+  Dog({weight, length, name})
+      : super(weight: weight, length: length, name: name);
 
   @override
   String bark() {
@@ -27,7 +28,8 @@ class Dog extends Animal {
 }
 
 class Cat extends Animal {
-  Cat() : super.statas(10, 50);
+  Cat({weight, length, name}) 
+  : super(weight: weight, length: length, name: name);
 
   @override
   String bark() {
